@@ -5,6 +5,25 @@ USER="kali"
 HOST="192.168.178.98"
 COMMAND="cd ~/Documents/Test && npm install"
 
+echo "mobile or desktop? (m/d):"
+read device_type
+
+DEVICE=""
+
+# Save the input in a variable
+if [[ "$device_type" == "m"  ]]; then
+    DEVICE="mobile"
+    
+    elif [[ "$device_type" == "d"  ]]; then
+    DEVICE="desktop"
+else
+    echo "Invalid input. Please run the script again and enter 'm' or 'd'."
+fi
+
+echo $DEVICE
+sleep 5
+exit 1
+
 # DE git checkout . && js_dev && styles extracten etc
 # Open SSH connection and execute command, capture output
 OUTPUT=$(ssh "${USER}@${HOST}" "${COMMAND}")
