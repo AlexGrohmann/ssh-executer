@@ -9,19 +9,14 @@ COMMAND="cd ~/Documents/Test && npm install"
 OUTPUT=$(ssh "${USER}@${HOST}" "${COMMAND}")
 
 # Check if the command was successful and respond based on the output
-if [ $? -eq 0 ]; then
-    echo "Command executed successfully. Output:"
-    echo "${OUTPUT}"
-    
-    # Perform actions based on the output
-    if [[ "${OUTPUT}" == *"user123"* ]]; then
-        echo "The /home directory contains 'user123'. Performing specific action."
-        # Add your specific action here
-    else
-        echo "The /home directory does not contain 'user123'."
-    fi
+if [[ "${OUTPUT}" == *"up to date"* ]]; then
+    echo "Output contains up to date"
+    echo "execute next command"
+    echo $(ssh "${USER}@${HOST}" "${COMMAND}")
 else
-    echo "Failed to execute command."
+    echo "if statement was false"
+    
 fi
+
 
 sleep 5
