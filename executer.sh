@@ -5,7 +5,7 @@ USER="kali"
 HOST="192.168.178.98"
 COMMAND="cd ~/Documents/Test && npm install"
 
-# DE js_dev && styles extracten etc
+# DE git checkout . && js_dev && styles extracten etc
 # Open SSH connection and execute command, capture output
 OUTPUT=$(ssh "${USER}@${HOST}" "${COMMAND}")
 
