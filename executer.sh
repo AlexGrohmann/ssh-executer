@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Variables
-USER="user123"
-HOST="192.168.1.100"
-COMMAND="ls /home"
+USER="kali"
+HOST="192.168.178.98"
+COMMAND="cd ~/Documents/Test && npm install"
 
 # Open SSH connection and execute command, capture output
 OUTPUT=$(ssh "${USER}@${HOST}" "${COMMAND}")
@@ -23,3 +23,5 @@ if [ $? -eq 0 ]; then
 else
     echo "Failed to execute command."
 fi
+
+sleep 5
